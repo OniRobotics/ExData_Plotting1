@@ -14,16 +14,16 @@ pdata <- rbind(a,b)
 x <- paste(pdata$Date,pdata$Time)
 pdata$X <- as.POSIXct(x)
 par(mfrow = c(2,2))
-hist(pdata$Global_active_power,
-     col = "red",
-     main = "Global Active Power",
-     xlab = "Global Active Power (kilowatts)", 
-     ylab = "Frequency")
 plot(pdata$X,
      pdata$Global_active_power, 
      type = "l",
      xlab = "",
      ylab = "Global Active Power (kilowatts)")
+plot(pdata$X,
+     pdata$Voltage, 
+     type = "l",
+     xlab = "datetime",
+     ylab = "Voltage")
 plot(pdata$X,
      pdata$Sub_metering_1, 
      type = "l",
